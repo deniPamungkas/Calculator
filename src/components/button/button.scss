@@ -1,0 +1,35 @@
+.btn {
+  width: 65px;
+  height: 65px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  background: #e2e2e2;
+  box-shadow: -5px 5px 10px #b9b9b9, 5px -5px 10px #ffffff;
+  font-size: 20px;
+  &:active {
+    border-radius: 16px;
+    background: #e2e2e2;
+    box-shadow: inset -5px 5px 10px #b9b9b9, inset 5px -5px 10px #ffffff;
+  }
+
+  &.lg {
+    width: 147px;
+  }
+  &.orange {
+    color: orange;
+  }
+  &.nightMode {
+    color: white;
+    border-radius: 16px;
+    background: #2e2e2e;
+    box-shadow: -5px 5px 15px #1b1b1b, 5px -5px 15px #414141;
+    &.orange {
+      color: orange;
+    }
+    &:active {
+      background: #2e2e2e;
+      box-shadow: inset -14px 14px 28px #1b1b1b, inset 14px -14px 28px #414141;
+    }
+  }
+}
