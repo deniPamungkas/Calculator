@@ -25,17 +25,15 @@ function App() {
   const [state, dispatch] = useReducer(reducer, red);
 
   const body = document.getElementById("root").parentElement;
-  useEffect(() => {
-    body.classList.toggle("nightMode");
-  }, [context]);
+  if (context) return body.classList.toggle("nightMode");
+  console.log(context);
 
   const setNightMode = () => {
-    if (context) {
-      return "nightMode";
-    } else {
-      return "";
-    }
+    if (context) return "nightMode";
+    return "";
   };
+
+  console.log(setNightMode());
 
   const number = [
     "AC",
@@ -57,8 +55,6 @@ function App() {
   ];
   const operation = ["%", "/", "x", "+", "-"];
   const numberOrange = [3, 7, 11, 15];
-
-  console.log(state);
 
   return (
     <main className={`App ${setNightMode()}`}>

@@ -15,7 +15,6 @@ const evaluate = (e) => {
     case "-":
       return (hasil =
         parseFloat(e.previousOperand) - parseFloat(e.currentOperand));
-
     case "x":
       return (hasil =
         parseFloat(e.previousOperand) * parseFloat(e.currentOperand));
@@ -32,7 +31,7 @@ const evaluate = (e) => {
 export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_DIGIT":
-      if (state.overwrite) {
+      if (state.overwrite) { 
         return {
           ...state,
           currentOperand: action.payload.digit,
