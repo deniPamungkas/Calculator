@@ -25,8 +25,6 @@ function App() {
   const [state, dispatch] = useReducer(reducer, red);
 
   const body = document.getElementById("root").parentElement;
-  if (context) return body.classList.toggle("nightMode");
-  console.log(context);
 
   const setNightMode = () => {
     if (context) return "nightMode";
@@ -34,6 +32,10 @@ function App() {
   };
 
   console.log(setNightMode());
+  const handleClick = ()=>{
+    body.classList.toggle("nightMode");
+    setTheme()
+  }
 
   const number = [
     "AC",
@@ -60,7 +62,7 @@ function App() {
     <main className={`App ${setNightMode()}`}>
       <button
         className={`nightModeToggle btn ${setNightMode()}`}
-        onClick={setTheme}
+        onClick={handleClick}
       >
         {context ? "Go Bright" : "Go Dark"}
       </button>
